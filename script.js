@@ -19,7 +19,7 @@ const quotes = [
     { text: "Do not let the behavior of others destroy your inner peace.", author: "Dalai Lama" },
     { text: "Hardships often prepare ordinary people for an extraordinary destiny.", author: "C.S. Lewis" },
     { text: "The only thing a person can ever really do is keep moving forward. Take that big leap forward without hesitation, without once looking back.", author: "Sally Berneathy" },
-
+    { text: "There’s no talent here, this is just hard work. This is an obsession. Talent doesn’t exist, we are all equals as human beings. You could be anyone if you put in the time.", author: "Conor McGregor" },
 ];
 
 const quoteText = document.getElementById('quoteText');
