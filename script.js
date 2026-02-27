@@ -25,23 +25,31 @@ const quotes = [
 const quoteText = document.getElementById('quoteText');
 const quoteAuthor = document.getElementById('quoteAuthor');
 const newQuoteBtn = document.getElementById('newQuoteBtn');
+const tweetBtn = document.getElementById('tweetBtn');
+const copyBtn = document.getElementById('copyBtn');
 
-function getRandomQuote() {
-    quoteText.classList.remove('fade-in');
+function updateQuote() {
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    
+    quoteText.parentElement.classList.remove('fade-up');
     void quoteText.offsetWidth; 
-    quoteText.classList.add('fade-in');
+    quoteText.parentElement.classList.add('fade-up');
 
-
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const selectedQuote = quotes[randomIndex];
-
-
-    quoteText.textContent = selectedQuote.text;
-    quoteAuthor.textContent = selectedQuote.author;
+    quoteText.innerText = randomQuote.text;
+    quoteAuthor.innerText = `— ${randomQuote.author}`;
 }
 
 
-newQuoteBtn.addEventListener('click', getRandomQuote);
+tweetBtn.addEventListener('click', () => {
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.innerText} ${quoteAuthor.innerText}`;
+    window.open(twitterUrl, '_blank');
+});
 
+// Copy to Clipboard
+copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(`${quoteText.innerText} ${quoteAuthor.innerText}`);
+    alert("Quote copied to clipboard!");
+});
 
-window.onload = getRandomQuote;
+newQuoteBtn.addEventListener('click', updateQuote);
+window.onload = updateQuote;
