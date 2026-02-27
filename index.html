@@ -3,19 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inspiration Generator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="background-blobs">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
 
-    <div class="quote-card">
-        <div class="icon-quote">“</div>
-        <p id="quoteText">The only way to do great work is to love what you do.</p>
-        <p id="quoteAuthor">Steve Jobs</p>
-        
-        <div class="actions">
-            <button id="newQuoteBtn">Next Quote</button>
+    <div class="container">
+        <div class="quote-box" id="quoteBox">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <div class="text-area">
+                <p id="quoteText">Loading inspiration...</p>
+                <span id="quoteAuthor"></span>
+            </div>
+            
+            <div class="line-divider"></div>
+
+            <div class="footer-actions">
+                <div class="social-btns">
+                    <button class="tool-btn" id="copyBtn" title="Copy Quote"><i class="far fa-copy"></i></button>
+                    <button class="tool-btn" id="tweetBtn" title="Tweet This"><i class="fab fa-twitter"></i></button>
+                </div>
+                <button id="newQuoteBtn">Next Insight <i class="fas fa-arrow-right"></i></button>
+            </div>
         </div>
     </div>
 
